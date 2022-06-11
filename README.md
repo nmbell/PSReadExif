@@ -1,4 +1,4 @@
-# PSReadExif 1.0.0
+# PSReadExif 1.0.1
 
 [SHORT DESCRIPTION](#short-description)
 
@@ -43,7 +43,7 @@ Note: While the 217 available metadata properties cover a lot of commonly used d
 
 ## QUICK START GUIDE
 ### 1. Install the module.
-   The [module](https://www.powershellgallery.com/packages/PSReadExif/1.0.0) is available through the [PowerShell Gallery](https://docs.microsoft.com/en-us/powershell/scripting/gallery/getting-started).
+   The [module](https://www.powershellgallery.com/packages/PSReadExif/1.0.1) is available through the [PowerShell Gallery](https://docs.microsoft.com/en-us/powershell/scripting/gallery/getting-started).
    Run the following command in a PowerShell console to install the module:
    ```
    Install-Module -Name PSReadExif -Force
@@ -73,10 +73,31 @@ Note: While the 217 available metadata properties cover a lot of commonly used d
    ```
    For more examples, see the [Add-ExifData](help/Add-ExifData.md) function help.
 
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+## EXAMPLES
+Rename all jpeg images in a directory using the date the image was taken:
+```
+Get-ChildItem -Filter *.jpg | Add-ExifData | Where-Object { $_.ExifData.DateTimePS } | Rename-Item -NewName { $_.ExifData.DateTimePS.ToString('yyyyMMdd_HHmmss')+$_.Extension }
+```
+
+
+Find all images in a directory taken in horizontal format:
+```
+Get-ChildItem | Add-ExifData | Where-Object { $_.ExifData.Orientation -like 'Horizontal*' }
+```
+
+
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 
 ## RELEASE HISTORY
+### 1.0.1 (2022-06-11)
+  - Add call to Dispose() method
+  - Add examples in about_PSReadExif
+
 ### 1.0.0 (2022-06-10)
   - Initial release
 

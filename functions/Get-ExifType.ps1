@@ -12,6 +12,9 @@ function Get-ExifType
 
 	.NOTES
 	Author : nmbell
+
+	.LINK
+	https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.propertyitem.type
 	#>
 
 	# Function alias

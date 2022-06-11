@@ -22,6 +22,9 @@ function Get-ExifTag
 
 	.NOTES
 	Author : nmbell
+
+	.LINK
+	https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.propertyitem.id?view=dotnet-plat-ext-6.0
 	#>
 
 	# Function alias

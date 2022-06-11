@@ -1214,6 +1214,7 @@ function Get-ExifData
 					Throw
 				}
 			}
+			$bitmap.Dispose()
 		}
 	}
 
