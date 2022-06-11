@@ -1,4 +1,4 @@
-# PSReadExif 1.0.0
+﻿# PSReadExif 1.0.0
 
 [SHORT DESCRIPTION](#short-description)
 
@@ -33,9 +33,9 @@ Note: While the 217 available metadata properties cover a lot of commonly used d
 
 ### The module functions
 
-- [Get-ExifData](help/Get-ExifData.md)
-- [Add-ExifData](help/Add-ExifData.md)
-- [Get-ExifTag](help/Get-ExifTag.md)
+- [Get-ExifData](Get-ExifData.md)
+- [Add-ExifData](Add-ExifData.md)
+- [Get-ExifTag](Get-ExifTag.md)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -64,14 +64,14 @@ Note: While the 217 available metadata properties cover a lot of commonly used d
    $Path = 'C:\my\images\Canon.jpg'
    Get-ExifData -Path $Path
    ```
-   For more examples, see the [Get-ExifData](help/Get-ExifData.md) function help.
+   For more examples, see the [Get-ExifData](Get-ExifData.md) function help.
 
    To add EXIF metadata as properties of a file object:
    ```
    $Path = 'C:\my\images\Canon.jpg'
    Get-Item -Path $Path | Add-ExifData | Select-Object -ExpandProperty ExifData
    ```
-   For more examples, see the [Add-ExifData](help/Add-ExifData.md) function help.
+   For more examples, see the [Add-ExifData](Add-ExifData.md) function help.
 
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
@@ -79,4 +79,3 @@ Note: While the 217 available metadata properties cover a lot of commonly used d
 ## RELEASE HISTORY
 ### 1.0.0 (2022-06-10)
   - Initial release
-
