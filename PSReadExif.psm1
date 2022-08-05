@@ -1,4 +1,4 @@
-# PSReadExif 1.0.1
+# PSReadExif 1.0.2
 If (!$IsWindows)
 {
 	Write-Host 'PSReadExif is only available for Windows.'

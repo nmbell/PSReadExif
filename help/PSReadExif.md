@@ -1,4 +1,4 @@
-﻿# PSReadExif 1.0.1
+﻿# PSReadExif 1.0.2
 
 [SHORT DESCRIPTION](#short-description)
 
@@ -43,7 +43,7 @@ Note: While the 217 available metadata properties cover a lot of commonly used d
 
 ## QUICK START GUIDE
 ### 1. Install the module.
-   The [module](https://www.powershellgallery.com/packages/PSReadExif/1.0.1) is available through the [PowerShell Gallery](https://docs.microsoft.com/en-us/powershell/scripting/gallery/getting-started).
+   The [module](https://www.powershellgallery.com/packages/PSReadExif/1.0.2) is available through the [PowerShell Gallery](https://docs.microsoft.com/en-us/powershell/scripting/gallery/getting-started).
    Run the following command in a PowerShell console to install the module:
    ```
    Install-Module -Name PSReadExif -Force
@@ -94,6 +94,9 @@ Get-ChildItem | Add-ExifData | Where-Object { $_.ExifData.Orientation -like 'Hor
 ----------------------------------------------------------------------------------------------------
 
 ## RELEASE HISTORY
+### 1.0.2 (2022-08-05)
+  - Handle a divide by zero error
+
 ### 1.0.1 (2022-06-11)
   - Add call to Dispose() method
   - Add examples in about_PSReadExif

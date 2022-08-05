@@ -181,12 +181,13 @@ function Get-ExifData
 					$valueDisplay = $null
 					$d            = $null
 					$n            = $null
-					# $h            = ''
 
 					If ($ShowUnknown)
 					{
 						$tag = ($tag ?? "Unknown_$idHex`_$($idDec.ToString())")
 					}
+
+					If (!$tag) { Continue }
 
 					If ($TagId)
 					{
@@ -199,8 +200,6 @@ function Get-ExifData
 						If (!$tagMatch) { Continue }
 						Write-Debug "  [$thisFunctionName]Matched tag: $tagMatch"
 					}
-
-					If (!$tag) { Continue }
 
 					Write-Debug "  [$thisFunctionName]$($idDec.ToString())|$idHex|$tag|$($type.ToString())|$typeDesc|$($length.ToString())|$($valueBytes.ToString())"
 
@@ -477,7 +476,11 @@ function Get-ExifData
 						{
 							# $reciprocal = [Int](1/$valueDecoded[0])
 							# $valueDisplay = $valueDecoded[0] -lt 1.0 ? '1/{0} sec' -f [Int](1/$valueDecoded[0]) : $valueDecoded[0]
-							If ($valueDecoded[0] -lt 1.0)
+							If (!$valueDecoded[0])
+							{
+								$valueDisplay = ''
+							}
+							ElseIf ($valueDecoded[0] -lt 1.0)
 							{
 								$valueDisplay = '1/{0} sec' -f [Int](1/$valueDecoded[0])
 							}
